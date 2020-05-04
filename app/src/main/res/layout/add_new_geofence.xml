@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:visibility="visible"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+           >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Geofence"
+            android:layout_centerInParent="true"
+            android:textColor="@color/ntv_white"
+            android:textSize="@dimen/_16sdp" />
+
+
+        <RelativeLayout
+            android:id="@+id/cancel_dialog1"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:visibility="gone"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:layout_height="@dimen/_15sdp"
+                android:layout_width="@dimen/_15sdp"
+                android:background="@drawable/delete"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/geofence_namme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_gravity="center_horizontal"
+        android:text=""
+        android:maxLength="15"
+        android:hint="Enter Geofence Name"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/_14sdp" />
+
+    <RelativeLayout
+        android:id="@+id/geofencearea"
+        android:visibility="visible"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@drawable/edittext_shadow">
+
+        <Spinner
+            android:id="@+id/area"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.498" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical">
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+    <EditText
+
+        android:id="@+id/geofence_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_gravity="center_horizontal"
+        android:text=""
+        android:hint="Enter Start Geofence Address"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/_14sdp" />
+
+        <RelativeLayout
+            android:id="@+id/geofence_location"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_width="@dimen/_35sdp"
+            android:visibility="visible"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_alignParentRight="true"
+            >
+
+            <ImageView
+                android:layout_height="@dimen/_20sdp"
+                android:layout_width="@dimen/_20sdp"
+                android:textColor="@color/ntv_white"
+                android:textSize="@dimen/_14sdp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/location"
+                android:text=""/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+    <EditText
+        android:id="@+id/lat_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_gravity="center_horizontal"
+        android:text=""
+        android:maxLength="10"
+        android:hint="Enter Latitude"
+        android:inputType="number|numberDecimal"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/_14sdp" />
+
+        <Button
+            android:id="@+id/set_button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_alignParentRight="true"
+            android:text="set latlong"
+            android:paddingLeft="@dimen/_3sdp"
+            android:paddingRight="@dimen/_3sdp"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/ntv_white"
+            android:textSize="@dimen/_11sdp" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/long_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_gravity="center_horizontal"
+        android:text=""
+        android:maxLength="10"
+        android:hint="Enter Longitude"
+        android:inputType="number|numberDecimal"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/_14sdp" />
+
+       <RelativeLayout
+           android:id="@+id/end_location_layout"
+           android:layout_height="wrap_content"
+           android:layout_width="match_parent"
+           android:visibility="visible">
+           <RelativeLayout
+               android:id="@+id/end_location"
+               android:layout_height="wrap_content"
+               android:layout_width="match_parent">
+
+               <EditText
+
+                   android:id="@+id/end_geofence_address"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:gravity="left"
+                   android:layout_marginLeft="@dimen/_10sdp"
+                   android:layout_marginRight="@dimen/_40sdp"
+                   android:layout_marginTop="@dimen/_5sdp"
+                   android:layout_gravity="center_horizontal"
+                   android:text=""
+                   android:hint="Enter End Geofence Address"
+                   android:textColor="@color/colorPrimaryDark"
+                   android:textSize="@dimen/_14sdp" />
+
+               <RelativeLayout
+                   android:id="@+id/end_geofence_location"
+                   android:layout_height="@dimen/_35sdp"
+                   android:layout_width="@dimen/_35sdp"
+                   android:visibility="visible"
+                   android:layout_centerVertical="true"
+                   android:layout_marginRight="@dimen/_5sdp"
+                   android:layout_alignParentRight="true"
+                   >
+
+                   <ImageView
+                       android:layout_height="@dimen/_20sdp"
+                       android:layout_width="@dimen/_20sdp"
+                       android:textColor="@color/ntv_white"
+                       android:textSize="@dimen/_14sdp"
+                       android:layout_centerInParent="true"
+                       android:background="@drawable/location"
+                       android:text=""/>
+
+               </RelativeLayout>
+           </RelativeLayout>
+           <RelativeLayout
+               android:id="@+id/end_latitude"
+               android:layout_height="wrap_content"
+               android:layout_width="match_parent"
+               android:layout_below="@id/end_location">
+               <EditText
+                   android:id="@+id/end_lat_test"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:gravity="left"
+                   android:layout_marginLeft="@dimen/_10sdp"
+                   android:layout_marginRight="@dimen/_10sdp"
+                   android:layout_gravity="center_horizontal"
+                   android:text=""
+                   android:maxLength="10"
+                   android:hint="Enter Latitude"
+                   android:inputType="number|numberDecimal"
+                   android:textColor="@color/colorPrimaryDark"
+                   android:textSize="@dimen/_14sdp" />
+
+               <Button
+                   android:id="@+id/end_set_button"
+                   android:layout_width="wrap_content"
+                   android:layout_height="@dimen/_35sdp"
+                   android:layout_marginRight="@dimen/_10sdp"
+                   android:layout_alignParentRight="true"
+                   android:text="set latlong"
+                   android:paddingLeft="@dimen/_3sdp"
+                   android:paddingRight="@dimen/_3sdp"
+                   android:layout_marginLeft="@dimen/_3sdp"
+                   android:layout_gravity="center_horizontal"
+                   android:background="@color/colorPrimaryDark"
+                   android:textColor="@color/ntv_white"
+                   android:textSize="@dimen/_11sdp" />
+
+           </RelativeLayout>
+           <EditText
+               android:id="@+id/end_long_test"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:gravity="left"
+               android:layout_marginLeft="@dimen/_10sdp"
+               android:layout_marginRight="@dimen/_10sdp"
+               android:layout_gravity="center_horizontal"
+               android:text=""
+               android:maxLength="10"
+               android:layout_below="@id/end_latitude"
+               android:hint="Enter Longitude"
+               android:inputType="number|numberDecimal"
+               android:textColor="@color/colorPrimaryDark"
+               android:textSize="@dimen/_14sdp" />
+       </RelativeLayout>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/radius"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text=""
+        android:maxLength="7"
+        android:hint="Enter Radius in Meter"
+        android:inputType="number|numberDecimal"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/_14sdp" />
+    <RelativeLayout
+        android:id="@+id/geofence_layout"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Geofence"
+            android:layout_alignParentLeft="true"
+            android:textSize="@dimen/_16sdp" />
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content">
+
+
+            <com.suke.widget.SwitchButton
+                android:id="@+id/geofence_enable1"
+                android:layout_width="@dimen/_65sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:textOff=""
+                android:textOn=""
+                app:sb_checked="true"
+                app:sb_checked_color="@color/colorPrimaryDark"
+                app:sb_background="@color/ntv_white"
+                android:theme="@style/SwitchTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/geofence_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="onjkjhkhkjkkj"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_toLeftOf="@id/geofence_enable1"
+                android:textSize="@dimen/_16sdp" />
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_10sdp"
+
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_centerHorizontal="true"
+            >
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Add"
+        android:layout_marginLeft="@dimen/_3sdp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/ntv_white"
+        android:textSize="@dimen/_11sdp" />
+
+
+        <Button
+            android:visibility="visible"
+            android:id="@+id/remove_button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_35sdp"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Remove"
+            android:layout_gravity="center_horizontal"
+            android:paddingRight="@dimen/_5sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/ntv_white"
+            android:textSize="@dimen/_11sdp" />
+
+            <Button
+                android:visibility="visible"
+                android:id="@+id/cancel_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_35sdp"
+                android:gravity="center"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Cancel"
+                android:layout_gravity="center_horizontal"
+                android:paddingRight="@dimen/_5sdp"
+                android:paddingLeft="@dimen/_5sdp"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/ntv_white"
+                android:textSize="@dimen/_11sdp" />
+    </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
+</ScrollView>

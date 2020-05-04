@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path name="attachment_file" path="."/>
+
+    <external-files-path
+        name="images"
+        path="Pictures" />
+        
+    <external-cache-path
+        name="camera_intent_image"
+        path="/"/>
+    <root-path name="root" path="." />
+    <files-path
+        name="files"
+        path="/" />
+    <cache-path
+        name="cache"
+        path="." />
+    <!--Uncomment below to share the entire application specific directory -->
+    <!--<external-path name="all_dirs" path="."/>-->
+</paths>

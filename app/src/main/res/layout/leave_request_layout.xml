@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:visibility="visible"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_above="@+id/employe_list"
+            android:background="@color/colorPrimaryDark">
+
+            <RelativeLayout
+                android:id="@+id/back_layout"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:visibility="visible"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/back1" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_toRightOf="@id/back_layout"
+                android:text="Leave Request"
+                android:textColor="@color/ntv_white"
+                android:textSize="@dimen/_16sdp" />
+
+
+            <ImageView
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@drawable/logout1"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/_10sdp"
+        android:orientation="vertical">
+  <LinearLayout
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_150sdp"
+        android:text="Available Leaves :"
+        android:textSize="@dimen/_13sdp"/>
+
+
+    <TextView
+        android:id="@+id/available_leaves"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_width="wrap_content"
+        android:text="0"
+        android:layout_weight="1"
+        android:textSize="@dimen/_13sdp"/>
+
+
+</LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_150sdp"
+                android:text="Leave For"
+                android:textSize="@dimen/_13sdp"/>
+
+
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:background="@drawable/edittext_shadow"
+                >
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/ed_leavefor"
+                    android:layout_height="@dimen/_35sdp"
+                    android:singleLine="true"
+                    android:inputType="textCapWords"
+                    android:padding="@dimen/_5sdp"
+                    android:textColor="@color/text_color"
+                    android:theme="@style/MatchSpinnerTheme"
+                    android:dropDownWidth="match_parent"
+                    android:layout_width="match_parent"/>
+                <android.widget.TextView
+                    android:id="@+id/tvInvisibleError1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignRight="@+id/ed_leavefor"
+                    android:paddingTop="0dp"
+                    android:paddingRight="30dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_150sdp"
+            android:text="Leave Type"
+            android:textSize="@dimen/_13sdp"/>
+
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:background="@drawable/edittext_shadow"
+          >
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/ed_leavetype"
+                android:layout_height="@dimen/_35sdp"
+                android:singleLine="true"
+                android:inputType="textCapWords"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/text_color"
+                android:theme="@style/MatchSpinnerTheme"
+                android:dropDownWidth="match_parent"
+                android:layout_width="match_parent"/>
+            <android.widget.TextView
+                android:id="@+id/tvInvisibleError"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_alignRight="@+id/ed_leavetype"
+                android:paddingTop="0dp"
+                android:paddingRight="30dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/select_date_layout"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/background_color"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/select_date"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_width="wrap_content"
+                    android:textSize="@dimen/_13sdp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/dark_blue"
+                    android:text="Select Date"/>
+
+                <ImageView
+                    android:layout_toRightOf="@id/select_date"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:background="@drawable/calendar"/>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_height="@dimen/_40sdp"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                >
+
+            <ImageView
+                android:layout_height="@dimen/_20sdp"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@drawable/calendar"/>
+            </RelativeLayout>
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/date_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:visibility="gone"
+        android:orientation="horizontal">
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/from_date"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/_13sdp"
+            android:text="From Date"/>
+            <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/ed_fdate"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:inputType="number"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/text_color"
+                android:background="@drawable/edittext_shadow"
+                android:focusable="false"/>
+
+            <ImageView
+                android:layout_height="@dimen/_15sdp"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@drawable/calendar"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/end_date"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/_13sdp"
+                android:text="To Date"/>
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/ed_edate"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:textColor="@color/text_color"
+                    android:background="@drawable/edittext_shadow"
+                    android:focusable="false"/>
+
+                <ImageView
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@drawable/calendar"/>
+
+            </RelativeLayout>
+        </LinearLayout>
+</LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_150sdp"
+                android:text="Days"
+                android:layout_weight="1"
+                android:textSize="@dimen/_13sdp"/>
+
+
+            <TextView
+                android:id="@+id/days"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="0"
+                android:layout_weight="1"
+                android:textSize="@dimen/_13sdp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_150sdp"
+                android:text="Reporting Manager"
+                android:textSize="@dimen/_13sdp"/>
+
+
+            <EditText
+                android:layout_height="@dimen/_35sdp"
+                android:layout_width="match_parent"
+                android:text="Amit kumar Prajapati"
+                android:padding="@dimen/_3sdp"
+                android:editable="false"
+                android:focusable="false"
+                android:textColor="@color/text_color"
+                android:background="@drawable/edittext_shadow"
+                android:textSize="@dimen/_13sdp"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:visibility="visible"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Reason"
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:textSize="@dimen/_13sdp"/>
+
+
+            <EditText
+                android:id="@+id/reason"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_width="wrap_content"
+                android:hint="Reason"
+                android:gravity="top|left"
+                android:padding="@dimen/_3sdp"
+                android:layout_weight="1"
+                android:textColor="@color/text_color"
+                android:background="@drawable/edittext_shadow"
+                android:textSize="@dimen/_13sdp"/>
+
+
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/apply_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="40dp"
+            android:background="@color/dark_blue"
+            android:text="Apply"
+            android:textSize="@dimen/_15sdp"
+            android:textColor="@color/ntv_white"
+            />
+</LinearLayout>
+
+
+</LinearLayout>
+</ScrollView>

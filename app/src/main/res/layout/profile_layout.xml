@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:visibility="visible"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_above="@+id/employe_list"
+            android:background="@color/colorPrimaryDark">
+
+            <RelativeLayout
+                android:id="@+id/profile_back_layout"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:visibility="visible"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/back1" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_toRightOf="@id/profile_back_layout"
+                android:text="Profile"
+                android:textColor="@color/ntv_white"
+                android:textSize="@dimen/_16sdp" />
+
+
+            <ImageView
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@drawable/logout1"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+    <TextView
+        android:id="@+id/reset_pin"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/_14sdp"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Reset Pin"></TextView>
+
+    <View
+        android:layout_height="@dimen/_1sdp"
+        android:layout_width="match_parent"
+        android:background="@color/transparent_black"/>
+
+    <TextView
+        android:id="@+id/setgeofence"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/_14sdp"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Set Geofence"></TextView>
+
+    <View
+        android:layout_height="@dimen/_1sdp"
+        android:layout_width="match_parent"
+        android:background="@color/transparent_black"/>
+
+    <TextView
+        android:id="@+id/showmap"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/_14sdp"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Show Map"></TextView>
+
+    <View
+        android:layout_height="@dimen/_1sdp"
+        android:layout_width="match_parent"
+        android:background="@color/transparent_black"/>
+
+</LinearLayout>

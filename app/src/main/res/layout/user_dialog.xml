@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:visibility="visible"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select User"
+                android:layout_centerInParent="true"
+                android:textColor="@color/ntv_white"
+                android:textSize="@dimen/_16sdp" />
+
+
+            <RelativeLayout
+                android:id="@+id/cancel_dialog1"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_width="@dimen/_40sdp"
+                android:visibility="gone"
+                android:layout_alignParentRight="true">
+
+                <ImageView
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_width="@dimen/_15sdp"
+                    android:background="@drawable/delete"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ListView
+        android:id="@+id/select_user_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_60sdp"
+        android:layout_below="@id/toolbar"/>
+
+
+    <ProgressBar
+        android:id="@+id/user_progressbar"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="@color/colorPrimaryDark"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:visibility="gone" />
+
+
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Cancel"
+        android:textColor="@color/ntv_white"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_below="@id/select_user_list"
+        />
+
+</RelativeLayout>

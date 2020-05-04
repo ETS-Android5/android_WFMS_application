@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+        <RelativeLayout
+            android:id="@+id/header_layout"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:background="@color/colorPrimaryDark">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="@color/ntv_white"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:textSize="@dimen/_16sdp"
+                android:text="Details"/>
+
+
+            <ImageView
+                android:id="@+id/logout"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@drawable/logout1"/>
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <EditText
+        android:id="@+id/user_details"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:hint="Enter Details"
+        android:text=""
+        android:gravity="top|left"
+        android:padding="@dimen/_5sdp"
+        android:background="@drawable/btn_border_background"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:textColor="@color/ntv_white"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Submit"
+
+        />
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/_10sdp"
+    >
+
+    <com.applandeo.materialcalendarview.CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:abbreviationsBarColor="@color/dark_blue"
+        app:abbreviationsLabelsColor="@color/ntv_white"
+        app:daysLabelsColor="@color/dark_blue"
+        app:headerColor="@color/dark_blue"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:pagesColor="@color/ntv_white"
+        app:eventsEnabled="false"
+        app:disabledDaysLabelsColor="@color/border_color"
+        app:selectionColor="@color/dark_blue"
+        app:selectionLabelColor="@color/ntv_white"
+        app:anotherMonthsDaysLabelsColor="@color/dark_blue"
+        app:todayLabelColor="@color/colorPrimaryDark1"
+        app:type="many_days_picker"
+        app:maximumDaysRange="2"/>
+
+    <Button
+        android:id="@+id/getDateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select date"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingLeft="@dimen/_20sdp"
+        android:paddingRight="@dimen/_20sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:textColor="@color/ntv_white"
+        android:background="@color/dark_blue"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calendarView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

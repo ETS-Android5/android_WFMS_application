@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Screens background color-->
+    <color name="bg_screen1">#f64c73</color>
+    <color name="bg_screen2">#20d2bb</color>
+    <color name="bg_screen3">#3395ff</color>
+    <color name="bg_screen4">#c873f4</color>
+    <color name="colorFocused">#bbdefb</color>
+    <color name="present">#9bc01c</color>
+    <color name="absent">#fa6775</color>
+    <color name="border_color">#ccc</color>
+   <!-- <color name="colorPrimaryDark1">#00a79d</color>
+    <color name="colorPrimaryDark">#00a79d</color>-->
+    <color name="colorPrimaryDark1">#33cbcc</color>
+    <color name="colorPrimaryDark">#33cbcc</color>
+    <color name="disable_color">#D1F2EB</color>
+    <color name="orange_color">#f17422</color>
+    <color name="input_hintcolor">#838998</color>
+    <color name="bg_color">#b8e9f8</color>
+    <color name="green">#008000</color>
+    <color name="text_color">#838998</color>
+    <color name="background_color">#e6e6e6</color>
+    <color name="dark_blue">#262262</color>
+    <color name="primary">#3F51B5</color>
+
+    <color name="transparent_white_hex_8">#88ffffff</color>
+    <color name="black_semi_transparent">#B2000000</color>
+
+    <color name="colorAccent">#FFFFFF</color>
+    <color name="colorBackground">#413e4f</color>
+    <color name="colorText">#FFFFFF</color>
+    <color name="colorTextHint">#51d8c7</color>
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#d1395c</color>
+    <color name="dot_dark_screen2">#14a895</color>
+    <color name="dot_dark_screen3">#2278d4</color>
+    <color name="dot_dark_screen4">#a854d4</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#f98da5</color>
+    <color name="dot_light_screen2">#8cf9eb</color>
+    <color name="dot_light_screen3">#93c6fd</color>
+    <color name="dot_light_screen4">#e4b5fc</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+    </array>
+
+    <!--Colours for Tab-->
+    <color name="colorPrimary">#125688</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+
+
+    <!-- Extra backround colors-->
+
+    <color name="lightskyblue">#b0e2ff</color>
+    <color name="A80_lightskyblue1">#80b0e2ff</color>
+    <color name="blue">#0000ff</color>
+    <color name="dodgerblue1">#1E90FF</color>
+    <color name="purple1">#9B30FF</color>
+    <color name="mediumorchid1">#BA55D3</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="lightgrey">#D3D3D3</color>
+    <color name="orange">#FF9000</color>
+    <color name="orangeshadow">#FE7C00</color>
+    <color name="transparent">#00000000</color>
+    <color name="settings_lightBlue">#2d445d</color>
+    <color name="settings_darkblue">#202f46</color>
+    <color name="Android_blue">#33B5E5</color>
+    <color name="Android_green">#A4C639</color>
+    <color name="A80_black">#33000000</color>
+    <color name="grey_shadow">#90696969</color>
+    <color name="irevo_white">#e8e8e8</color>
+    <color name="edit_hint_color">#838998</color>
+    <color name="irevo_black">#000000</color>
+    <color name="irevo_bg_dark_blue_A70">#B3384480</color>
+    <color name="irevo_bg_dark_blue">#384480</color>
+    <color name="irevo_bg_light_blue">#586ccf</color>
+    <color name="blue3">#728DB0</color>
+    <color name="translucent_black">#20000000</color>
+    <color name="translucent_blue">#50b0e2ff</color>
+    <color name="violet_dark">#394264</color>
+    <color name="navy_blue_dark">#314165</color>
+    <color name="navy_blue_light">#51709c</color>
+    <color name="sky_blue_dark">#1a4e95</color>
+    <color name="sky_blue_light">#3468af</color>
+    <color name="sliding_menu_green">#11a8ab</color>
+    <color name="sliding_menu_separator">#1e2234</color>
+    <color name="sliding_menu_section_bg">#50587C</color>
+    <color name="irevo_bluish_grey">#394165</color>
+    <color name="irevo_pink">#e64c65</color>
+    <color name="white">#D0D0D0</color>
+    <color name="water_theme_sky_blue">#4c92e8</color>
+    <color name="water_theme_light_blue">#0a659e</color>
+    <color name="water_theme_normal_blue">#0b5286</color>
+    <color name="water_theme_dark_blue">#024071</color>
+    <color name="water_theme_listview_divider">#024070</color>
+    <color name="water_theme_light_brown_A30">#109D7F65</color>
+    <color name="water_theme_sky_blue_A50">#504c92e8</color>
+    <color name="water_theme_light_blue_AF0">#F02465A6</color>
+    <color name="water_theme_light_blue_AB5">#B52465A6</color>
+    <color name="water_theme_faded_sky_blue">#AFCDF3</color>
+    <color name="water_theme_white">#fefefe</color>
+    <color name="water_theme_meta_data_text">#024070</color>
+    <color name="water_theme_listview_divider_gery">#DCDCDC</color>
+    <color name="water_theme_text_hint_grey">#e5e5e5</color>
+    <color name="black">#000000</color>
+    <color name="grey_horoscope">#565656</color>
+    <color name="ntv_white">#FFFFFF</color>
+    <color name="black_bf">#BF000000</color>
+    <color name="menu_item_blue">#104859</color>
+    <color name="black_transparent">#262626</color>
+    <color name="menu_btn_red">#D4222E</color>
+    <color name="menu_btn_green">#38B348</color>
+    <color name="menu_btn_yellow">#EEA61C</color>
+    <color name="menu_btn_blue">#386EB6</color>
+    <color name="menu_item_indicator_blue">#36B5EA</color>
+    <color name="menu_arrow_dim_grey">#CC313131</color>
+    <color name="shadow_light_black_transparent">#45000000</color>
+    <color name="shadow_light_grey_transparent">#90696969</color>
+    <color name="menu_layout_black">#CC000000</color>
+    <color name="menu_arrow_grey">#313131</color>
+    <color name="black_transparent_55">#CC000000</color>
+    <color name="black_transparent_12">#E0000000</color>
+    <color name="black_transparent_75">#A0000000</color>
+    <color name="black_transparent_60">#B6000000</color>
+    <color name="dark_gray">#B6000000</color>
+    <color name="black_opacity_40">#66000000</color>
+    <color name="black_opacity_30">#4D000000</color>
+    <color name="blue_transparent_55">#CC4c92e8</color>
+    <color name="purple_light_50">#FFB7F9</color>
+
+
+    <color name="tile_green">#400bbb8d</color>
+    <color name="tile_red">#60ff4d39</color>
+    <color name="tile_blue">#40277aeb</color>
+    <color name="tile_light_yellow">#40ffae0b</color>
+    <color name="tile_purple">#9a53b6</color>
+    <color name="tile_pink">#40c21765</color>
+    <color name="tile_skyblue">#04a9ee</color>
+    <color name="tile_magenta">#ae113e</color>
+    <color name="tile_orange">#40e16e1d</color>
+    <color name="tile_cerelon_blue">#402176eb</color>
+    <color name="tile_yellow">#80f39f19</color>
+    <color name="tile_violet">#805932c3</color>
+    <color name="tile_seagreen">#0aba8e</color>
+    <color name="tile_gray">#535353</color>
+
+
+    <color name="l_blue">#909BAA</color>
+    <color name="d_blue">#6D7B92</color>
+    <color name="gray">#CCCCCC</color>
+    <color name="d_gray">#666</color>
+
+</resources>

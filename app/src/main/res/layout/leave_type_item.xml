@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_margin="@dimen/_5sdp"
+    android:background="@color/colorPrimaryDark"
+    android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardBackgroundColor="#fff"
+        card_view:cardCornerRadius="@dimen/_5sdp">
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/cancel_layout"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_width="@dimen/_40sdp"
+                android:visibility="gone"
+                android:layout_alignParentRight="true">
+                <ImageView
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/cancel"/>
+            </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_leave_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_12sdp"
+        android:text="Leave type : "/>
+
+    <TextView
+        android:id="@+id/tv_reason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_below="@id/tv_leave_type"
+        android:text="Reason : "/>
+
+    <TextView
+        android:id="@+id/tv_fromdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_reason"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_alignParentLeft="true"
+        android:textSize="@dimen/_12sdp"
+        android:text="From Date : "/>
+
+    <TextView
+        android:id="@+id/tv_todate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_12sdp"
+        android:layout_below="@id/tv_reason"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="To Date :"/>
+
+    <TextView
+        android:id="@+id/tv_appliedon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_12sdp"
+        android:layout_below="@id/tv_todate"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:visibility="gone"
+        android:text="Applied on : 2/10/2019"/>
+    <TextView
+        android:id="@+id/tv_dayes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_below="@id/tv_todate"
+        android:layout_alignParentRight="true"
+        android:text="Total Days : 0"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
