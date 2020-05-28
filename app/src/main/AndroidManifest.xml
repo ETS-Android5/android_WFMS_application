@@ -101,7 +101,7 @@
             android:windowSoftInputMode="stateHidden" />
 
         <activity
-            android:name=".DemoActivity"
+            android:name=".MainActivity1"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".AddPerson"

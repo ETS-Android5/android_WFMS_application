@@ -146,8 +146,8 @@ public class MainActivity extends NewPhotoPickerActivity implements ProgressRequ
     /**
      * ButterKnife Code
      **/
-    @BindView(R.id.timeIn_button)
-    RelativeLayout mTimeInButton;
+  //  @BindView(R.id.timeIn_button)
+   public static  RelativeLayout mTimeInButton;
     @BindView(R.id.capture_button)
     RelativeLayout capture_button;
     @BindView(R.id.timeOut_button)
@@ -164,10 +164,10 @@ public class MainActivity extends NewPhotoPickerActivity implements ProgressRequ
     TextView time;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @BindView(R.id.timein_text)
-    TextView timein_text;
-    @BindView(R.id.timein_img)
-    ImageView timein_img;
+   // @BindView(R.id.timein_text)
+   public static TextView timein_text;
+   // @BindView(R.id.timein_img)
+    public static ImageView timein_img;
     /**
      * ButterKnife Code
      **/
@@ -196,7 +196,7 @@ public class MainActivity extends NewPhotoPickerActivity implements ProgressRequ
     private static final long UPDATE_INTERVAL_IN_MILLISECONDS = 10000;
     private static final long FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS = 5000;
     ProgressDialog dialog;
-    String userid, username, currenttime, currentdate, locationURL, login, olduserid, deviceiD, address;
+    public static String userid, username, currenttime, currentdate, locationURL, login, olduserid, deviceiD, address;
     Context context;
     Handler handler = new Handler();
     public static double latitude=0.0;
@@ -212,6 +212,9 @@ public class MainActivity extends NewPhotoPickerActivity implements ProgressRequ
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        mTimeInButton=(RelativeLayout)findViewById(R.id.timeIn_button) ;
+        timein_text=(TextView)findViewById(R.id.timein_text) ;
+        timein_img=(ImageView) findViewById(R.id.timein_img) ;
         context = mTimeInButton.getContext();
         if (NetworkUtil.isOnline(getApplicationContext()))
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -518,7 +521,7 @@ public class MainActivity extends NewPhotoPickerActivity implements ProgressRequ
 
                 }).check();
 
-     /*   //timein/timeout funtionality
+        //timein/timeout funtionality
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             FingerprintManager fingerprintManager = (FingerprintManager) context.getSystemService(Context.FINGERPRINT_SERVICE);
             if(fingerprintManager!=null) {
@@ -541,16 +544,16 @@ public class MainActivity extends NewPhotoPickerActivity implements ProgressRequ
         } else {
             //timein/timeout funtionality
             entrytime();
-        }*/
+        }
 
-    /* Intent i=new Intent(MainActivity.this,FaceActivity.class);
+    /* Intent i=new Intent(MainActivity.this,MainActivity1.class);
      startActivity(i);*/
-        detector = new FaceDetector.Builder(getApplicationContext())
+      /* detector = new FaceDetector.Builder(getApplicationContext())
                 .setTrackingEnabled(false)
                 .setLandmarkType(FaceDetector.ALL_CLASSIFICATIONS)
                 .setClassificationType(FaceDetector.ALL_CLASSIFICATIONS)
                 .build();
-       facelogin();
+       facelogin();*/
 
     }
 
@@ -1365,7 +1368,7 @@ public class MainActivity extends NewPhotoPickerActivity implements ProgressRequ
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        detector.release();
+       //detector.release();
     }
 
 }

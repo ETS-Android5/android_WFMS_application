@@ -233,9 +233,15 @@ public class DemoActivity extends AppCompatActivity {
                 Log.d("nu", "no null");
             }
         }
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 == PackageManager.PERMISSION_GRANTED) {
-            new initRecAsync().execute();
+            Bundle b=getIntent().getExtras();
+            if(b!=null)
+            {
+                new initRecAsync().execute();
+            }
+
         }
     }
 

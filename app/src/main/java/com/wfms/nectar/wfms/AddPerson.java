@@ -99,7 +99,8 @@ public class AddPerson extends AppCompatActivity {
                 case R.id.btn_add:
                     String targetPath = Constants.getDLibImageDirectoryPath() + "/" + et_name.getText().toString() + ".jpg";
                     FileUtils.copyFile(imgPath,targetPath);
-                    Intent i = new Intent(AddPerson.this,DemoActivity.class);
+                    Intent i = new Intent(AddPerson.this,MainActivity1.class);
+                    i.putExtra("face",true);
                     startActivity(i);
                     finish();
                     break;

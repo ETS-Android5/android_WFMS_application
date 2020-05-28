@@ -36,7 +36,7 @@
     <string name="flash_off">Flash off</string>
     <string name="flash_on">Flash on</string>
     <string name="take_picture">Recognize</string>
-    <string name="add_person">Add</string>
+    <string name="add_person">Add User</string>
     <string name="title_activity_add_person">AddPerson</string>
     <string name="key">AIzaSyCoVgdz83W-UZdwvc4DvXjJpI8o0HL2EnM</string>
 </resources>

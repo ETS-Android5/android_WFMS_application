@@ -24,6 +24,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -61,6 +62,17 @@ import com.google.android.cameraview.CameraView;
 import com.tzutalin.dlib.Constants;
 import com.tzutalin.dlib.FaceRec;
 import com.tzutalin.dlib.VisionDetRet;
+import com.wfms.nectar.jsonModelResponses.Fuel.EmployeData;
+import com.wfms.nectar.jsonModelResponses.signup.SignUpResponse;
+import com.wfms.nectar.presenter.presenterImpl.SignUpPresenterImplnotification;
+import com.wfms.nectar.presenter.presenterImpl.SignUpadminPresenterImpl;
+import com.wfms.nectar.sql.DatabaseHelper;
+import com.wfms.nectar.utils.AppConstants;
+import com.wfms.nectar.utils.Config;
+import com.wfms.nectar.utils.PrefUtils;
+import com.wfms.nectar.viewstate.SignUpViewUpdate;
+import com.wfms.nectar.viewstate.SignUpViewadminnotification;
+import com.wfms.nectar.viewstate.SignUpViewnotification;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -69,11 +81,11 @@ import java.util.regex.Pattern;
 
 // This demo app uses dlib face recognition based on resnet
 public class MainActivity1 extends AppCompatActivity implements
-        ActivityCompat.OnRequestPermissionsResultCallback{
+        ActivityCompat.OnRequestPermissionsResultCallback, SignUpViewadminnotification, SignUpViewUpdate, SignUpViewnotification {
     private Context myContext;
     private static final String TAG = "MainActivity";
     private static final int INPUT_SIZE = 500;
-
+    String userid;
     private static final int[] FLASH_OPTIONS = {
             CameraView.FLASH_AUTO,
             CameraView.FLASH_OFF,
@@ -126,7 +138,7 @@ public class MainActivity1 extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.face);
         checkPermissions();
-
+        userid = PrefUtils.getKey(MainActivity1.this, AppConstants.UserID);
         mCameraView = (CameraView) findViewById(R.id.camera);
 
         if (mCameraView != null) {
@@ -161,15 +173,45 @@ public class MainActivity1 extends AppCompatActivity implements
         runOnUiThread(changeMessage);
     }
 
+    @Override
+    public void onSignUpUpdateSuccess(SignUpResponse signUpResponse) {
+
+    }
+
+    @Override
+    public void onSignUpUpdateFailure(String msg) {
+
+    }
+
+    @Override
+    public void onSignUpSuccessadminnotification(SignUpResponse signUpResponse) {
+
+    }
+
+    @Override
+    public void onSignUpFailureadminnotification(String msg) {
+
+    }
+
+    @Override
+    public void onSignUpSuccessnotification(SignUpResponse signUpResponse) {
+
+    }
+
+    @Override
+    public void onSignUpFailurenotification(String msg) {
+
+    }
+
     private class initRecAsync extends AsyncTask<Void, Void, Void> {
         ProgressDialog dialog = new ProgressDialog(MainActivity1.this);
 
         @Override
         protected void onPreExecute() {
             Log.d(TAG, "initRecAsync onPreExecute called");
-            dialog.setMessage("Initializing...");
+           /* dialog.setMessage("Initializing...");
             dialog.setCancelable(false);
-            dialog.show();
+            dialog.show();*/
             super.onPreExecute();
         }
 
@@ -193,15 +235,15 @@ public class MainActivity1 extends AppCompatActivity implements
                 //Log.d(TAG, "error in setting dlib_rec_example directory");
             }
             mFaceRec = new FaceRec(Constants.getDLibDirectoryPath());
-            changeProgressDialogMessage(dialog, "Adding people...");
+          //  changeProgressDialogMessage(dialog, "Adding people...");
             mFaceRec.train();
             return null;
         }
 
         protected void onPostExecute(Void result) {
-            if(dialog != null && dialog.isShowing()){
+           /* if(dialog != null && dialog.isShowing()){
                 dialog.dismiss();
-            }
+            }*/
         }
     }
 
@@ -238,15 +280,19 @@ public class MainActivity1 extends AppCompatActivity implements
             int facing = mCameraView.getFacing();
             mCameraView.setFacing(facing == CameraView.FACING_FRONT ?
                     CameraView.FACING_BACK : CameraView.FACING_FRONT);
-            Log.d("11111","11111");
+
         }
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 == PackageManager.PERMISSION_GRANTED) {
-            new initRecAsync().execute();
+            Bundle b=getIntent().getExtras();
+        //    if(b!=null)
+         //   {
+                new initRecAsync().execute();
+         //  }
+
         }
     }
 
-    @Override
     protected void onPause() {
         Log.d(TAG, "onPause called");
         mCameraView.stop();
@@ -330,10 +376,100 @@ public class MainActivity1 extends AppCompatActivity implements
                 if (i!=names.size()-1) msg+=", ";
             }
             msg+=" found!";
+           // entrytime();
         }
         return msg;
     }
+    public void entrytime() {
 
+        DatabaseHelper databaseHelper = new DatabaseHelper(MainActivity1.this);
+        EmployeData data = new EmployeData();
+
+        data.setUser_id(PrefUtils.getKey(MainActivity1.this, AppConstants.UserID));
+        data.setIn_location(MainActivity.address);
+        data.setIn_time(MainActivity.currenttime);
+        data.setIn_location_url(MainActivity.locationURL);
+        data.setIn_mac_address(MainActivity.deviceiD);
+        data.setIsupload("false");
+        data.setIslogin(PrefUtils.getKey(MainActivity1.this, AppConstants.IsLogin));
+        databaseHelper.TimeIn(data);
+
+        // Snack Bar to show success message that record is wrong
+
+        if (PrefUtils.getKey(MainActivity1.this, AppConstants.IsLogin).equals("0")) {
+            PrefUtils.storeKey(MainActivity1.this, "date", MainActivity.currentdate);
+            PrefUtils.storeKey(MainActivity1.this, "time", MainActivity.currenttime);
+            PrefUtils.storeKey(MainActivity1.this, "address", MainActivity.address);
+            PrefUtils.storeKey(MainActivity1.this, "locationurl", MainActivity.locationURL);
+            MainActivity.timein_text.setText("Time Out");
+            MainActivity. timein_img.setBackgroundResource(R.drawable.time_out);
+            PrefUtils.storeKey(MainActivity1.this, AppConstants.IsLogin, "1");
+            storetimeinvalue();
+            SharedPreferences pref = MainActivity1.this.getSharedPreferences(Config.SHARED_PREF, 0);
+            String regId = pref.getString("regId", null);
+            initnotificationAPIResources(userid, regId, MainActivity.currenttime, PrefUtils.getKey(MainActivity1.this, AppConstants.Clientid),PrefUtils.getKey(MainActivity1.this, AppConstants.Api_Token));
+            initadminnotificationAPIResources(userid, PrefUtils.getKey(MainActivity1.this, AppConstants.Name), PrefUtils.getKey(MainActivity1.this, AppConstants.Clientid),PrefUtils.getKey(MainActivity1.this, AppConstants.Api_Token));
+            Log.d("userid",userid);
+            Log.d("name",PrefUtils.getKey(MainActivity1.this, AppConstants.Name));
+            Log.d("clientid",PrefUtils.getKey(MainActivity1.this, AppConstants.Clientid));
+            Log.d("apitoken",PrefUtils.getKey(MainActivity1.this, AppConstants.Api_Token));
+
+
+        } else if (PrefUtils.getKey(MainActivity1.this, AppConstants.IsLogin).equals("1")) {
+            MainActivity.timein_text.setText("Time In");
+            MainActivity.timein_img.setBackgroundResource(R.drawable.time_in);
+            PrefUtils.storeKey(MainActivity1.this, AppConstants.IsLogin, "0");
+            storetimeOutvalue();
+
+        }
+        MainActivity.mTimeInButton.setClickable(false);
+        MainActivity.mTimeInButton.setEnabled(false);
+
+    }
+    //timeout data store in Localdatabase
+    private void storetimeOutvalue() {
+        DatabaseHelper databaseHelper = new DatabaseHelper(MainActivity1.this);
+        EmployeData data = new EmployeData();
+
+        data.setUser_id(PrefUtils.getKey(MainActivity1.this, AppConstants.UserID));
+        data.setUsername(PrefUtils.getKey(MainActivity1.this, AppConstants.Name));
+        data.setAttendance_id("50000");
+        data.setOut_date(MainActivity.currentdate);
+        data.setOut_time(MainActivity.currenttime);
+        data.setOut_location(MainActivity.address);
+        data.setOut_location_url(MainActivity.locationURL);
+        databaseHelper.UserupdateRecords(data);
+
+    }
+    //timein data store in Localdatabase
+    private void storetimeinvalue() {
+        DatabaseHelper databaseHelper = new DatabaseHelper(MainActivity1.this);
+        EmployeData data = new EmployeData();
+        data.setUser_id(PrefUtils.getKey(MainActivity1.this, AppConstants.UserID));
+        data.setUsername(PrefUtils.getKey(MainActivity1.this, AppConstants.Name));
+        data.setAttendance_id("50000");
+        data.setIn_date(MainActivity.currentdate);
+        data.setIn_time(MainActivity.currenttime);
+        data.setIn_location(MainActivity.address);
+        data.setIn_location_url(MainActivity.locationURL);
+        data.setOut_date("null");
+        data.setOut_time(null);
+        data.setOut_location(null);
+        data.setOut_location_url(null);
+        databaseHelper.UserRecords(data);
+    }
+
+    private void initnotificationAPIResources(String userid, String regId, String currenttime,String clientid,String apitoken) {
+        SignUpPresenterImplnotification loginPresenter = new SignUpPresenterImplnotification(MainActivity1.this);
+        loginPresenter.callApi(AppConstants.Notification, userid, regId, currenttime,clientid,apitoken);
+
+    }
+
+    private void initadminnotificationAPIResources(String userid, String username,String clientid,String apitoken) {
+        SignUpadminPresenterImpl loginPresenter = new SignUpadminPresenterImpl(MainActivity1.this);
+        loginPresenter.callApi(AppConstants.AdminNotification, userid, username,clientid,apitoken);
+
+    }
     private class recognizeAsync extends AsyncTask<Bitmap, Void, ArrayList<String>> {
         ProgressDialog dialog = new ProgressDialog(MainActivity1.this);
         private int mScreenRotation = 0;
@@ -374,6 +510,9 @@ public class MainActivity1 extends AppCompatActivity implements
                 builder1.setCancelable(true);
                 AlertDialog alert11 = builder1.create();
                 alert11.show();
+                Intent i=new Intent(MainActivity1.this,MainActivity.class);
+                startActivity(i);
+
             }
         }
 
