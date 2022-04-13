@@ -34,7 +34,7 @@ public class ConfigActivity extends AppCompatActivity implements SignUpView {
     EditText url;
     Button submit;
     public static RetroAPIInterface mRetroClient;
-    public static  String clientname="";
+    public static  String clientname;
     public  boolean isserver=false;
     CheckBox saveurl;
     String validurl="http://wfms.timesheet.nectarinfotel.com/";
@@ -74,8 +74,9 @@ public class ConfigActivity extends AppCompatActivity implements SignUpView {
 
 
                 clientname = url.getText().toString();
-                clientname = clientname.replace(" ", "");
-                clientname=clientname.trim();
+              /*  clientname = clientname.replace(" ", "");
+                clientname=clientname.trim();*/
+                Log.e("clientname",""+clientname);
 
                 if (clientname.length() > 0) {
                     checkclientname();

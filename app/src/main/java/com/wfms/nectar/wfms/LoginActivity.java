@@ -414,6 +414,8 @@ public class LoginActivity extends AppCompatActivity implements SignUpView, Goog
             Toast.makeText(this, "Server not responding", Toast.LENGTH_LONG).show();
         }
 
+
+
     }
 
     public void loadIMEI() {

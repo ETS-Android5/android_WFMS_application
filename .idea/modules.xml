@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/apeksha07-wfmsproject-b9fc1924df02.iml" filepath="$PROJECT_DIR$/apeksha07-wfmsproject-b9fc1924df02.iml" group="apeksha07-wfmsproject-b9fc1924df02" />
-      <module fileurl="file://$PROJECT_DIR$/app/apeksha07-wfmsproject-b9fc1924df02.app.iml" filepath="$PROJECT_DIR$/app/apeksha07-wfmsproject-b9fc1924df02.app.iml" group="apeksha07-wfmsproject-b9fc1924df02/app" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dlib/dlib.iml" filepath="$PROJECT_DIR$/dlib/dlib.iml" group="apeksha07-wfmsproject-b9fc1924df02/dlib" />
-      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" group="apeksha07-wfmsproject-b9fc1924df02/library" />
-      <module fileurl="file://$PROJECT_DIR$/wfms.iml" filepath="$PROJECT_DIR$/wfms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/android_WFMS_application.iml" filepath="$PROJECT_DIR$/.idea/android_WFMS_application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android_WFMS_application.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android_WFMS_application.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dlib/android_WFMS_application.dlib.iml" filepath="$PROJECT_DIR$/.idea/modules/dlib/android_WFMS_application.dlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/android_WFMS_application.library.iml" filepath="$PROJECT_DIR$/.idea/modules/library/android_WFMS_application.library.iml" />
     </modules>
   </component>
 </project>
